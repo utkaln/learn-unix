@@ -44,12 +44,15 @@ function listFiles {
     ls -la
 }
 
+# demonstrate return from a method
+function returnSum() {
+    total=$(($1+$2))
+    return $total
+}
 
 # to execute invoke a function name from above
-createFile utkal_test.sh true 
-listFiles
+returnSum 4 5
+echo "sum of 4 and 5 is $? "
 
-createFile utkal_test.txt false
-listFiles
 
 echo "*************** --> | "
